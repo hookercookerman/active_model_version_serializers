@@ -5,6 +5,10 @@ require 'active_support/core_ext/hash/slice'
 
 module ActiveModel
   class VersionSerializer
+    # make sure we move serialization to the version 
+    [:as_json, :to_json, :serializable_hash].each do |method|
+      undef_method method if instance_methods.include?(method)
+    end
 
     class_attribute :_versions, :_default, :_root, :_name
     self._versions, self._default = {}, :v1
@@ -89,7 +93,6 @@ module ActiveModel
       self._versions = self._versions.merge({version => vklass})
     end
 
-  private
     def method_missing(method, *args)
       if @vinstance.respond_to?(method)
         @vinstance.send(method, *args)
