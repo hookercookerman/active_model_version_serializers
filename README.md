@@ -1,3 +1,6 @@
+[![Build
+Status](https://secure.travis-ci.org/hookercookerman/active_model_version_serializers.png)](http://travis-ci.org/hookercookerman/active_model_version_serializers)
+
 # ActiveModel::VersionSerializer
 
 fairly short name. This is a little spin on active model serializers
