@@ -5,6 +5,11 @@ require 'active_support/core_ext/hash/slice'
 
 module ActiveModel
   class VersionSerializer
+
+    # @todo stripe this proxy back aka BasicObject 
+    undef_method :as_json
+    undef_method :to_json
+
     class_attribute :_versions, :_default, :_root, :_name
     self._versions, self._default = {}, :v1
     attr_reader :object, :options, :version, :vklass
