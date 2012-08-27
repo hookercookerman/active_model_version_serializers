@@ -17,7 +17,10 @@ describe "Active Model Serializing With Versioning" do
       its(:_default){should eq(:v2)}
     end
 
-    context "subclasses" do
+    context "subclasses"do
+      before do
+        ActiveModel::VersionSerializer.default :v2
+      end
       subject{UserSerializer}
       its(:_default){should eq(:v2)}
       context "chaning again" do
