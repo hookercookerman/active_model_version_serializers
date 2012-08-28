@@ -5,6 +5,7 @@ require 'active_support/core_ext/hash/slice'
 
 module ActiveModel
   class VersionSerializer
+
     # make sure we move serialization to the version 
     [:as_json, :to_json, :serializable_hash].each do |method|
       undef_method method if instance_methods.include?(method)
@@ -103,7 +104,7 @@ module ActiveModel
 
     # lets be nice to method
     def respond_to_missing?(method_name, include_private = false)
-      @vinstance.respond_to_missing?(method_name, include_private)
+      @vinstance.respond_to?(method_name, include_private)
     end
 
   end

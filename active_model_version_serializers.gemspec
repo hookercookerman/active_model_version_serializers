@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'active_model_serializers', '~>0.5.2'
+  gem.add_dependency 'active_model_serializers', '>=0.5.0'
   gem.add_dependency "activesupport", ">= 3.0.0"
   
   gem.add_development_dependency "rspec", "~> 2.11.0"
