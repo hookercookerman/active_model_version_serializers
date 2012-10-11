@@ -63,9 +63,9 @@ module ActiveModel
     #
     # @param [Symbol] version
     # @param [Proc] block
-    def self.version(version, &block)
+    def self.version(version, superclass = ActiveModel::Serializer, &block)
       base_class = self
-      vklass = Class.new(ActiveModel::Serializer) do
+      vklass = Class.new(superclass) do
         self.root(base_class._root)
         alias_method base_class._name.to_sym, :object
 
