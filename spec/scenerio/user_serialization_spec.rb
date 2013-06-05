@@ -84,6 +84,6 @@ describe "UserSerialization" do
     end
 
     subject{user_serializer.as_json}
-    it{should eq({user: user_attributes.merge(turns: [1,2,3]), turns: turn_attributes})}
+    it{should eq({user: user_attributes.merge(turn_ids: [1,2,3]), turns: turn_attributes})}
   end
 end
