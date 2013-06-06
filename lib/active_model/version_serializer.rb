@@ -6,9 +6,16 @@ require 'active_support/core_ext/hash/slice'
 module ActiveModel
   class VersionSerializer
 
-    # make sure we move serialization to the version 
-    [:as_json, :to_json, :serializable_hash].each do |method|
-      undef_method method if instance_methods.include?(method)
+    def as_json(*args)
+      @vinstance.as_json(*args)
+    end
+
+    def to_json(*args)
+      @vinstance.to_json(*args)
+    end
+
+    def serializable_hash(*args)
+      @vinstance.serializable_hash(*args)
     end
 
     class_attribute :_versions, :_default, :_root, :_name
