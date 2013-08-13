@@ -38,7 +38,7 @@ module ActiveModel
       self._root = name
     end
 
-    # Replication of inherited from active_model_serializer but we 
+    # Replication of inherited from active_model_serializer but we
     # get the name so we can define the correct name on each version
     #
     # of defined active model serializers
@@ -73,7 +73,7 @@ module ActiveModel
     def self.version(version, superclass = ActiveModel::Serializer, &block)
       base_class = self
       vklass = Class.new(superclass) do
-        self.root(base_class._root)
+        self.root(base_class._root) if superclass._root?
         alias_method base_class._name.to_sym, :object
 
         singleton_class.class_eval do
