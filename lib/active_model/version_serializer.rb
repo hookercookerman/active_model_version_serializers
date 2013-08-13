@@ -53,7 +53,7 @@ module ActiveModel
     end
 
     # creates a anoymous subclass of ActiveModel::Serializer
-    # setting the root from base alias of the serialbe object
+    # setting the root from base alias of the serializable object
     # with the name
     #
     # version_attributes so less typing if the versions are similar

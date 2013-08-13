@@ -25,12 +25,12 @@ More Information Go See [ActiveModel::Serializer](https://github.com/josevalim/a
 
 Good Question!
 
-When building an api; one would go through various changes in terms of 
-versioning. you could seperate this out into modules and that is my 
+When building an api; one would go through various changes in terms of
+versioning. you could seperate this out into modules and that is my
 perfered way. But hey why not have a place where you can easily see
 changes in an expressive way.
 
-## Show Me 
+## Show Me
 
 Has the same api as active_model_serializers however we can define
 a named version block. it also has some extra source for using
@@ -59,7 +59,7 @@ end
 ## Explict Version
 
 ```ruby
-UserSerializer.new(user, version: v3)
+UserSerializer.new(user, version: :v3)
 ```
 
 ## Controller
